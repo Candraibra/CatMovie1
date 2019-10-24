@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CatMovie</string>
+    <string name="movies">Movies</string>
+    <string name="tv">Tv</string>
+    <string name="cat">Cat</string>
+    <string name="movie">Movie</string>
+    <string name="lorem">lorem ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum</string>
+
+</resources>

@@ -1,14 +1,24 @@
 package com.candraibra.catmovie.data;
 
 public class Tv {
+    private String tvId;
     private String title;
     private String desc;
     private int image;
 
-    public Tv(String title, String desc, int image) {
+    public Tv(String tvId, String title, String desc, int image) {
+        this.tvId = tvId;
         this.title = title;
         this.desc = desc;
         this.image = image;
+    }
+
+    public String getTvId() {
+        return tvId;
+    }
+
+    public void setTvId(String tvId) {
+        this.tvId = tvId;
     }
 
     public String getTitle() {

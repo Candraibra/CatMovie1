@@ -1,6 +1,7 @@
 package com.candraibra.catmovie.adapter;
 
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.candraibra.catmovie.R;
 import com.candraibra.catmovie.data.Movie;
+import com.candraibra.catmovie.ui.activity.DetailMovieActivity;
 
 import java.util.ArrayList;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
 
-    Context context;
-    private ArrayList<Movie> movieList;
 
-    public MovieAdapter(Context mContext) {
-        this.movieList = new ArrayList<>();
+    private ArrayList<Movie> movieList;
+    private Activity activity;
+
+    public MovieAdapter(Activity activity) {
+        this.activity = activity;
+    }
+
+    private ArrayList<Movie> getMovieList() {
+        return movieList;
     }
 
     public void setMovieList(ArrayList<Movie> movieList) {
@@ -42,6 +49,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         holder.tvTitle.setText(movieList.get(i).getTitle());
         holder.tvDesc.setText(movieList.get(i).getDesc());
         holder.imgPhoto.setImageResource(movieList.get(i).getImage());
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(activity, DetailMovieActivity.class);
+            intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, getMovieList().get(i).getMovieId());
+            activity.startActivity(intent);
+        });
 
     }
 

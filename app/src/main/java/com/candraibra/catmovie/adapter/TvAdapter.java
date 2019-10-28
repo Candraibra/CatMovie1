@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.candraibra.catmovie.R;
 import com.candraibra.catmovie.data.Tv;
 import com.candraibra.catmovie.ui.activity.DetailMovieActivity;
+import com.candraibra.catmovie.ui.activity.DetailTvActivity;
 
 import java.util.ArrayList;
 
@@ -50,8 +51,8 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.MyViewHolder> {
         holder.tvDesc.setText(tvArrayList.get(i).getDesc());
         holder.imgPhoto.setImageResource(tvArrayList.get(i).getImage());
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(activity, DetailMovieActivity.class);
-            intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, getTvArrayList().get(i).getTvId());
+            Intent intent = new Intent(activity, DetailTvActivity.class);
+            intent.putExtra(DetailTvActivity.EXTRA_TV, getTvArrayList().get(i).getTvId());
             activity.startActivity(intent);
         });
 

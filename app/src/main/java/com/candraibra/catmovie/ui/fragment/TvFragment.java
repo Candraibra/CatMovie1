@@ -52,8 +52,8 @@ public class TvFragment extends Fragment {
             tvs = mViewModel.gettv();
 
             //adapter
-            tvAdapter = new TvAdapter(getActivity(), activity);
-            tvAdapter.setMovieList(tvs);
+            tvAdapter = new TvAdapter(getActivity());
+            tvAdapter.setTvArrayList(tvs);
 
             //recyclerView
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));

@@ -21,7 +21,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
 
     private ArrayList<Movie> movieList;
-    private Activity activity;
+    private final Activity activity;
 
     public MovieAdapter(Activity activity) {
         this.activity = activity;

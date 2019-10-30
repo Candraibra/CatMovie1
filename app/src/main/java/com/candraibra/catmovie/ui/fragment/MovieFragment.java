@@ -21,14 +21,8 @@ import java.util.ArrayList;
 
 public class MovieFragment extends Fragment {
 
-    private MovieViewModel mViewModel;
     private RecyclerView recyclerView;
-    private MovieAdapter movieAdapter;
-    private ArrayList<Movie> movies;
 
-    public static MovieFragment newInstance() {
-        return new MovieFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -46,11 +40,11 @@ public class MovieFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if (getActivity() != null) {
             //define viewModel
-            mViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
-            movies = mViewModel.getMovie();
+            MovieViewModel mViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
+            ArrayList<Movie> movies = mViewModel.getMovie();
 
             //adapter
-            movieAdapter = new MovieAdapter(getActivity());
+            MovieAdapter movieAdapter = new MovieAdapter(getActivity());
             movieAdapter.setMovieList(movies);
 
             //recyclerView

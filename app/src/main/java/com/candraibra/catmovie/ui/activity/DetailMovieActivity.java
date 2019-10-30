@@ -16,21 +16,18 @@ public class DetailMovieActivity extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
 
-    private ImageButton btnBack;
     private ImageView imgPoster;
     private TextView tvDesc;
     private TextView tvTitle;
-
-    private DetailViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_detail);
         //viewModel
-        viewModel = ViewModelProviders.of(this).get(DetailViewModel.class);
+        DetailViewModel viewModel = ViewModelProviders.of(this).get(DetailViewModel.class);
         //init views
-        btnBack = findViewById(R.id.backButton);
+        ImageButton btnBack = findViewById(R.id.backButton);
 
         imgPoster = findViewById(R.id.img_poster);
         tvTitle = findViewById(R.id.tv_title);

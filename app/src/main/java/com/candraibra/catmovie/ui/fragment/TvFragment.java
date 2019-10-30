@@ -21,14 +21,8 @@ import java.util.ArrayList;
 
 public class TvFragment extends Fragment {
 
-    private TvViewModel mViewModel;
     private RecyclerView recyclerView;
-    private TvAdapter tvAdapter;
-    private ArrayList<Tv> tvs;
 
-    public static TvFragment newInstance() {
-        return new TvFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -44,15 +38,14 @@ public class TvFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(TvViewModel.class);
         // TODO: Use the ViewModel
         if (getActivity() != null) {
             //define viewModel
-            mViewModel = ViewModelProviders.of(this).get(TvViewModel.class);
-            tvs = mViewModel.getTv();
+            TvViewModel mViewModel = ViewModelProviders.of(this).get(TvViewModel.class);
+            ArrayList<Tv> tvs = mViewModel.getTv();
 
             //adapter
-            tvAdapter = new TvAdapter(getActivity());
+            TvAdapter tvAdapter = new TvAdapter(getActivity());
             tvAdapter.setTvArrayList(tvs);
 
             //recyclerView

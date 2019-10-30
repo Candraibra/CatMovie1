@@ -49,7 +49,7 @@ public class TvFragment extends Fragment {
         if (getActivity() != null) {
             //define viewModel
             mViewModel = ViewModelProviders.of(this).get(TvViewModel.class);
-            tvs = mViewModel.gettv();
+            tvs = mViewModel.getTv();
 
             //adapter
             tvAdapter = new TvAdapter(getActivity());

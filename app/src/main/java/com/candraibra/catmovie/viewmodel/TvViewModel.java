@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class TvViewModel extends ViewModel {
     // TODO: Implement the ViewModel
-    public ArrayList<Tv> gettv() {
+    public ArrayList<Tv> getTv() {
         return DummyData.generateDummyTvs();
     }
 }

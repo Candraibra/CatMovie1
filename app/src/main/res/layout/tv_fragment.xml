@@ -20,7 +20,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:id="@+id/appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,10 +42,10 @@
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:layout_gravity="bottom"
-                    android:src="@drawable/cat" />
+                    android:src="@drawable/cat"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
-                    android:id="@+id/appName3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

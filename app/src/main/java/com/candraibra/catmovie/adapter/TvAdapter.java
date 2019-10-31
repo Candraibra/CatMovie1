@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.candraibra.catmovie.R;
 import com.candraibra.catmovie.data.Tv;
-import com.candraibra.catmovie.ui.activity.DetailMovieActivity;
 import com.candraibra.catmovie.ui.activity.DetailTvActivity;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.MyViewHolder> {
         this.activity = activity;
     }
 
-    public ArrayList<Tv> getTvArrayList() {
+    private ArrayList<Tv> getTvArrayList() {
         return tvArrayList;
     }
 
